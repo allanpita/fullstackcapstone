@@ -1,0 +1,15 @@
+body{ margin-left:0; margin-right:0; text-align:center;}
+header{ background-image:url(file:///C|/Users/DJWONDERMUSIC/Desktop/Free-book-hd-wallpapers.png);
+background-repeat:no-repeat; background-position:left;
+background-size:cover; height:250px; width:100%;
+}
+nav ul{list-style-type:none; background-color:black; margin-top:0px;}
+nav li {display:inline; padding:5px; }
+
+nav a {color: white; text-decoration:none;}
+
+footer{color:white; background-color: black;
+	}
+	
+.hideContent { display:none;
+	}

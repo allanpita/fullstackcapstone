@@ -1,17 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Capstone Full-Stack</title>
-<link rel="stylesheet" type="text/css" href="./main.css">
+<title>Student Feedback Tracker</title>
+
+<meta charset="UTF-8">
+<meta name="description" content="Application to keep track of student progress">
+<meta name="keywords" content="Student Feedback Tracker","SFT">
+
+<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
+
 <body>
+
 <header role="banner">
-<h1>Capstone Full-Stack</h1>
+<h1>Student Feedback Tracker</h1>
 </header>
-<section>
-<h2>Capstone Full-Stack</h2>
-<p>App is serving</p>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#searchstudent">Student Search</a></li>
+<li><a href="#searchstudent">Add Student</a></li>
+<li><a href="#editstudent">Edit Student</a></li>
+<li><a href="#editstudent">Delete Student</a></li>
+<li><a href="#developer">Developer</a></li>
+</ul>
+</nav>
+
+<section role="main">
+<article>
+ <form id="searchStudent">
+ <fieldset>
+ <legend>Student Search</legend>
+ <p>Search for a specific student by using one of the search inputs below.</p>
+  <input type="text" id="studentID" name="studentID" placeholder="Student ID">
+  <input type="text" id="firstName" name="firstName" placeholder="First Name">
+  <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+  <input type="submit">
+  <input type="reset">
+  </fieldset>
+</form> 
+</article>
+<article id="addStudent" class="hideContent">
+ <form>
+ <fieldset>
+ <legend>Add a Student</legend>
+ <p>Input the requiered information to add a student.</p>
+  <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
+  <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+  <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+  <input type="number" id="age" name="age" placeholder="Age" required>
+  <p>Student Curriculum:</p>
+  	Math:
+  <input type="number" id="mathGrade" name="mathGrade" placeholder="GPA" required>
+  <input type="number" id="mathAbs" name="mathAbs" placeholder="absences">
+    English:
+  <input type="number" id="englishGrade" name="englishGrade" placeholder="GPA" required>
+  <input type="number" id="englishAbs" name="englishAbs" placeholder="absences">
+    History:
+  <input type="number" id="historyGrade" name="historyGrade" placeholder="GPA" required>
+  <input type="number" id="historyAbs" name="historyAbs" placeholder="absences"> 
+    Science:
+  <input type="number" id="scienceGrade" name="scienceGrade" placeholder="GPA" required>
+  <input type="number" id="scienceAbs" name="scienceAbs" placeholder="absences"> 	
+    Elective:
+   <input type="number" id="electiveGrade" name="electiveGrade" placeholder="GPA" required>
+   <input type="number" id="electiveAbs" name="electiveAbs" placeholder="absences">
+  <input type="submit">
+  <input type="reset">
+  </fieldset>
+</form> 
+</article>
+
+<article id="editStudent" class="hideContent">
+ <form>
+ <fieldset>
+ <legend>Edit a Student</legend>
+ <p>Conduct a query for a specific student. Then, edit the information that you desire to change.</p>
+  <input type="text" id="studentID" name="studentID" placeholder="Student ID" required>
+  <input type="text" id="firstName" name="firstName" placeholder="First Name">
+  <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+  <input type="number" id="age" name="age" placeholder="Age">
+  <p>Student Curriculum:</p>
+  	Math:
+  <input type="number" id="mathGrade" name="mathGrade" placeholder="GPA">
+  <input type="number" id="mathAbs" name="mathAbs" placeholder="absences">
+    English:
+  <input type="number" id="englishGrade" name="englishGrade" placeholder="GPA">
+  <input type="number" id="englishAbs" name="englishAbs" placeholder="absences">
+    History:
+  <input type="number" id="historyGrade" name="historyGrade" placeholder="GPA">
+  <input type="number" id="historyAbs" name="historyAbs" placeholder="absences"> 
+    Science:
+  <input type="number" id="scienceGrade" name="scienceGrade" placeholder="GPA">
+  <input type="number" id="scienceAbs" name="scienceAbs" placeholder="absences"> 	
+    Elective:
+   <input type="number" id="electiveGrade" name="electiveGrade" placeholder="GPA">
+   <input type="number" id="electiveAbs" name="electiveAbs" placeholder="absences">
+  <input type="submit">
+  <input type="reset">
+  </fieldset>
+</form> 
+</article>
+
+
+<article id="results" class="hideContent">
+<h2>Query Results</h2>
+<ul>
+</ul>
+</article>
+
+
+<article id="developer" class="hideContent">
+<h2>Developer</h2>
+<p>Below are instructions on how to use the data below for your API development</p>
+</article>
+
 </section>
-<footer role="contentinfo"></footer>
+
+<footer role="contentinfo">
+<h2></h2>
+<p>Designed by MRAP</p>
+<p>Copyright &copy; 2019 SFT</p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="javascripts/index.js"></script> 
 </body>
 </html>

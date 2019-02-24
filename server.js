@@ -1,11 +1,24 @@
 const express = require('express');
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 
+//mongoose promise connection
+const mongoose = require('mongoose');
+mongoose.Promise=global.Promise;
+mongoose.connect('mongodb://localhost:27017/student')
+  .then(() =>  console.log('connected to mongo succesfully'))
+  .catch((err) => console.error(err));
 
-app.use(express.static('public'));
+//Morgan Loger
 app.use(morgan("common"));
+app.use('/', require('./routes/routes'))
 
+//app.use(express.static('public'));
+
+
+//start server / connections
 let server;
 
 function startServer() {
@@ -34,10 +47,6 @@ function closeServer() {
   });
 }
 
-
-
-if (require.main === module) {
-  startServer().catch(err => console.error(err));
-};
+if (require.main === module) {startServer().catch(err => console.error(err));};
 
 module.exports = {app, startServer, closeServer};
