@@ -9,16 +9,10 @@ $('#results').empty();
 $('#results').removeClass('hideSection')
 queryHandle(id);
 }); 
-
-(#resultsArea').removeClass('hideSection')
-//$('#results').empty();
-//let ipAddress = $('#ip').val(); 
-//queryHandle(ipAddress);
-
 //end of Submit function
 
 function queryHandle(id){
-const url = `http://localhost:8080/api/${id}`;
+const url = `https://peaceful-thicket-95451.herokuapp.com/api/${id}`;
 
 fetch(url)
 .then(response => response.json())  //transform data from GET into JSON format. 
