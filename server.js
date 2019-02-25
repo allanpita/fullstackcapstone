@@ -17,6 +17,14 @@ mongoose.connect('mongodb://localhost:27017/student')
 */
 //Morgan Loger
 app.use(morgan("common"));
+
+//allows CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use('/', require('./routes/routes'))
 
 //app.use(express.static('public'));
