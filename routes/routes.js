@@ -3,12 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose')
 const student = require('../models/model')
 const app = express();
-//allows CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 //My Get Route
 router.get('/api/', (req,res) =>{
 	student.find({},(err, students)=>{
