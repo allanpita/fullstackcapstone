@@ -10,23 +10,26 @@ $('#results ul').empty();
 queryHandle(id);
 }); 
 
-//end of Submit function
-
-
-
 
 function queryHandle(id){
 const url = `https://peaceful-thicket-95451.herokuapp.com/api/${id}`;
 fetch(url)
 .then(response => response.json())  //transform data from GET into JSON format. 
 .then(jsonData =>{                  //pivot to data.
-Object.entries(jsonData).forEach(item =>{
-  let mainString = `${item[0]['firstname']}`;
-  console.log(mainString)
-}) 
-Object.entries(jsonData.curriculum).forEach(sitem => {
-  console.log(sitem[1].class); 
-//$('#results ul').append(`<li>${item[1]}</li>`);
+Object.entries(jsonData).forEach(sitem => {
+let infoData = (JSON.stringify(sitem[1],['_id','firstname','lastname','age'],1)).split(",");
+let curriculumData = (JSON.stringify(sitem[1].curriculum,['class','GPA}','absences',],1)).split(",");
+organizer(infoData);
+organizer(curriculumData);
+
 })
 })
 }
+
+let organizer = (data => {
+data.forEach(item =>{
+  item = item.replace(/[\[\]\{\}]/g, "");
+console.log(item)
+$('#results ul').append(`<li>${item}</li>`);
+})
+});
